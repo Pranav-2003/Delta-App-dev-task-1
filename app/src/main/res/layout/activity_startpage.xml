@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CF61F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="MATH PUZZLE GAME"
+        android:textSize="40dp"
+        android:layout_margin="50dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_margin="25dp"
+        android:textSize="25dp"
+        android:text="Rules:\n1. Solve 5 questions to complete the puzzle\n2. Maximum 3 attempts allowed\n3. Points will be based on number of attempts too (-0.5 for each life used)"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        android:textColor="@color/black"
+        android:backgroundTint="#198306"
+        android:text="Start Game"
+        android:onClick="start"/>
+
+</LinearLayout>
+
+
+</LinearLayout>
