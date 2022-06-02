@@ -17,17 +17,38 @@
         android:textColor="#EA990C"
         android:gravity="center"/>
 
-    <TextView
-        android:id="@+id/lives"
-        android:layout_width="140dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:background="#000000"
-        android:textSize="18dp"
-        android:text="LIVES : ❤❤❤"
-        android:layout_margin="10dp"
-        android:textColor="#EA990C"/>
-
+        android:orientation="horizontal"
+        android:layout_weight="3">
+        <TextView
+            android:id="@+id/lives"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:background="#000000"
+            android:textSize="18dp"
+            android:text="LIVES : ❤❤❤"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="20dp"
+            android:textColor="#EA990C"/>
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:background="#000000"
+            android:textSize="18dp"
+            android:text="CURRENT SCORE = 0"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:textColor="#EA990C"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,6 +59,7 @@
             android:id="@+id/a1"
             android:layout_width="20dp"
             android:layout_weight="1"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:layout_height="match_parent"
             android:padding="10dp"
@@ -51,12 +73,13 @@
             android:padding="5dp"
             android:text="+"
             android:textSize="30dp"
-            android:paddingStart="20dp"
+            android:paddingStart="15dp"
             android:layout_margin="10dp"/>
         <TextView
             android:id="@+id/a3"
             android:layout_width="20dp"
             android:layout_height="match_parent"
+            android:textAlignment="center"
             android:layout_weight="1"
             android:textColor="@color/black"
             android:padding="10dp"
@@ -75,6 +98,7 @@
         <TextView
             android:id="@+id/a5"
             android:layout_width="20dp"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@color/black"
@@ -95,6 +119,7 @@
             android:layout_width="20dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:padding="10dp"
             android:background="#686565"
@@ -107,11 +132,12 @@
             android:padding="5dp"
             android:text="-"
             android:textSize="35dp"
-            android:paddingStart="24dp"
+            android:paddingStart="20dp"
             android:layout_margin="10dp"/>
         <TextView
             android:id="@+id/b3"
             android:layout_width="20dp"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@color/black"
@@ -131,6 +157,7 @@
         <TextView
             android:id="@+id/b5"
             android:layout_width="20dp"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="10dp"
@@ -150,6 +177,7 @@
             android:id="@+id/c1"
             android:layout_width="20dp"
             android:layout_weight="1"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:textColor="@color/black"
@@ -168,6 +196,7 @@
         <TextView
             android:id="@+id/c3"
             android:layout_width="20dp"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="10dp"
@@ -188,6 +217,7 @@
             android:id="@+id/c5"
             android:layout_width="20dp"
             android:layout_height="match_parent"
+            android:textAlignment="center"
             android:layout_weight="1"
             android:textColor="@color/black"
             android:padding="10dp"
@@ -207,6 +237,7 @@
             android:layout_width="20dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:padding="10dp"
             android:background="#686565"
@@ -224,6 +255,7 @@
         <TextView
             android:id="@+id/d3"
             android:layout_width="20dp"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:textColor="@color/black"
             android:layout_weight="1"
@@ -243,6 +275,7 @@
         <TextView
             android:id="@+id/d5"
             android:layout_width="20dp"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="10dp"
@@ -263,6 +296,7 @@
             android:layout_width="20dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:padding="10dp"
             android:background="#686565"
@@ -281,6 +315,7 @@
             android:id="@+id/e3"
             android:layout_width="20dp"
             android:layout_height="match_parent"
+            android:textAlignment="center"
             android:layout_weight="1"
             android:padding="10dp"
             android:textColor="@color/black"
@@ -300,6 +335,7 @@
             android:id="@+id/e5"
             android:layout_width="20dp"
             android:layout_height="match_parent"
+            android:textAlignment="center"
             android:layout_weight="1"
             android:padding="10dp"
             android:textColor="@color/black"
@@ -316,8 +352,9 @@
 
         <TextView
             android:id="@+id/op1"
-            android:layout_width="0dp"
+            android:layout_width="20dp"
             android:layout_weight="1"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:textColor="@color/black"
             android:padding="10dp"
@@ -325,8 +362,9 @@
             android:layout_margin="10dp"/>
         <TextView
             android:id="@+id/op2"
-            android:layout_width="0dp"
+            android:layout_width="20dp"
             android:layout_weight="1"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:textColor="@color/black"
             android:padding="10dp"
@@ -334,7 +372,8 @@
             android:layout_margin="10dp"/>
         <TextView
             android:id="@+id/op3"
-            android:layout_width="0dp"
+            android:layout_width="20dp"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@color/black"
@@ -343,7 +382,8 @@
             android:layout_margin="10dp"/>
         <TextView
             android:id="@+id/op4"
-            android:layout_width="0dp"
+            android:layout_width="20dp"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:textColor="@color/black"
             android:layout_weight="1"
@@ -352,7 +392,8 @@
             android:layout_margin="10dp"/>
         <TextView
             android:id="@+id/op5"
-            android:layout_width="0dp"
+            android:layout_width="20dp"
+            android:textAlignment="center"
             android:layout_height="match_parent"
             android:textColor="@color/black"
             android:layout_weight="1"
@@ -374,6 +415,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:padding="10dp"
             android:background="#BCB9B9"
@@ -383,6 +425,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:padding="10dp"
             android:background="#BCB9B9"
@@ -392,6 +435,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:padding="10dp"
             android:background="#BCB9B9"
@@ -401,6 +445,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textColor="@color/black"
+            android:textAlignment="center"
             android:layout_weight="1"
             android:padding="10dp"
             android:background="#BCB9B9"
@@ -410,6 +455,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textColor="@color/black"
+            android:textAlignment="center"
             android:layout_weight="1"
             android:padding="10dp"
             android:background="#BCB9B9"
@@ -419,12 +465,32 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/submitbtn"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:backgroundTint="#1C9C91"
-        android:textColor="#140232"
-        android:text="Submit"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/submitbtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:backgroundTint="#1C9C91"
+            android:textColor="#140232"
+            android:layout_margin="5dp"
+            android:text="Submit"/>
+
+        <Button
+            android:id="@+id/clr"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#140232"
+            android:layout_margin="5dp"
+            android:text="Clear all"/>
+
+
+    </LinearLayout>
 
 </LinearLayout>

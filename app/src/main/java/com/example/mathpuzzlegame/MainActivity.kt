@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import kotlin.math.ceil
+import kotlin.math.floor
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,6 +40,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var op10:TextView
     lateinit var sub: Button
     lateinit var l:TextView
+    lateinit var clrbtn: Button
+    lateinit var sc:TextView
     var bv1 = 0
     var bv2 = 0
     var bv3 = 0
@@ -54,6 +58,7 @@ class MainActivity : AppCompatActivity() {
     var rv4 = ""
     var rv5 = ""
     var newlist = listOf<Int>()
+    var vlist = listOf<TextView>()
     var oplist = listOf<TextView>()
     var value=""
     var id = 0
@@ -88,6 +93,8 @@ class MainActivity : AppCompatActivity() {
         op10 = findViewById(R.id.op10)
         sub = findViewById(R.id.submitbtn)
         l = findViewById(R.id.lives)
+        clrbtn = findViewById(R.id.clr)
+        sc = findViewById(R.id.score)
         bv1 = (1..500).random()
         bv2 = (1..500).random()
         bv3 = (1..500).random()
@@ -96,19 +103,28 @@ class MainActivity : AppCompatActivity() {
         bv6 = (1..99).random()
         bv7 = (1..500).random()
         bv8 = (1..50).random()
+        while(true){
+            if(ceil(bv7.toDouble()/bv8.toDouble())== floor(bv7.toDouble()/bv8.toDouble())){
+                break
+            }
+            bv7 = (1..500).random()
+            bv8 = (1..50).random()
+        }
         bv9 = (1..500).random()
         bv10 = (1..500).random()
         rv1 = (bv1+bv2).toString()
         rv2 = (bv3-bv4).toString()
         rv3 = (bv5*bv6).toString()
-        rv4 = "%.2f".format(bv7.toDouble()/bv8.toDouble())
+        rv4 = (bv7/bv8).toString()
         rv5 = (bv9+bv10).toString()
         oplist = listOf(op1,op2,op3,op4,op5,op6,op7,op8,op9,op10)
+        vlist = listOf(v1,v2,v4,v5,v7,v8,v10,v11,v13,v14)
         var list = listOf<Int>(bv1,bv2,bv3,bv4,bv5,bv6,bv7,bv8,bv9,bv10)
         newlist = list.shuffled()
         valuedisplay()
         clicks()
         submit()
+        clearall()
     }
     fun valuedisplay(){
         op1.text = newlist[0].toString()
@@ -406,31 +422,34 @@ class MainActivity : AppCompatActivity() {
                 var a = v1.text.toString().toInt() + v2.text.toString().toInt()
                 var b = v4.text.toString().toInt() - v5.text.toString().toInt()
                 var c = v7.text.toString().toInt() * v8.text.toString().toInt()
-                var d = "%.2f".format(v10.text.toString().toDouble() / v11.text.toString().toDouble())
+                var d = (v10.text.toString().toInt() / v11.text.toString().toInt()).toString()
                 var e = v13.text.toString().toInt() + v14.text.toString().toInt()
                 var f = booltoint((a.toString() == rv1)) + booltoint((b.toString() == rv2)) + booltoint((c.toString() == rv3))+ booltoint((d == rv4)) + booltoint((e.toString() == rv5))
                 var s = if(f>0) (f-(3-lives)*0.5) else 0
                 if ((a.toString() == rv1) && (b.toString() == rv2) && (c.toString() == rv3) && (d == rv4) && (e.toString() == rv5)) {
                     if(lives==3){
-                    Toast.makeText(this, "You won!! Your Score = 5/5", Toast.LENGTH_LONG).show()}
+                    Toast.makeText(this, "You won!! Your Final Score = 5/5", Toast.LENGTH_LONG).show()}
                     else{
-                        Toast.makeText(this, "You have completed the puzzle!! Your Score = ${s}/5", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "You have completed the puzzle!! Your Final Score = ${s}/5", Toast.LENGTH_LONG).show()
                     }
                     recreate()
                 }
                 else{
                     lives-=1
+                    s = if(f>0) (f-(3-lives)*0.5) else 0
                     if(lives!=0){
                         Toast.makeText(this, "WRONG!! You have ${lives} more lives", Toast.LENGTH_SHORT).show()
                     }
                     if(lives==2){
                         l.text = "LIVES : ❤❤"
+                        sc.text = "CURRENT SCORE = ${s}"
                     }
                     if(lives==1){
                         l.text = "LIVES : ❤"
+                        sc.text = "CURRENT SCORE = ${s}"
                     }
                     if(lives==0){
-                        Toast.makeText(this, "You have lost! Your Score = ${s}/5", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "You have lost! Your Final Score = ${s}/5", Toast.LENGTH_LONG).show()
                         val i = Intent(this,startingpage::class.java)
                         finish()
                         startActivity(i)
@@ -448,6 +467,16 @@ class MainActivity : AppCompatActivity() {
         }
         else{
             return 0
+        }
+    }
+    fun clearall(){
+        clrbtn.setOnClickListener{
+            for(i in 0..9){
+                vlist[i].text=""
+                vlist[i].setBackgroundColor(ContextCompat.getColor(this,R.color.grey))
+                oplist[i].text=newlist[i].toString()
+                oplist[i].setBackgroundColor(ContextCompat.getColor(this,R.color.light_grey))
+            }
         }
     }
 }
