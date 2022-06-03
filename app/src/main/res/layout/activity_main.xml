@@ -26,16 +26,16 @@
             android:id="@+id/lives"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
             android:background="#000000"
             android:textSize="18dp"
             android:text="LIVES : ❤❤❤"
+            android:paddingLeft="6dp"
             android:layout_gravity="center"
             android:layout_marginTop="3dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:textColor="#EA990C"/>
         <TextView
-            android:layout_width="20dp"
+            android:layout_width="15dp"
             android:layout_height="match_parent"/>
         <TextView
             android:id="@+id/score"
@@ -486,7 +486,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="#140232"
+            android:textColor="@color/black"
             android:layout_margin="5dp"
             android:text="Clear all"/>
 
